@@ -1,0 +1,680 @@
+/* start new editing  */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.dropdown {
+    z-index: 99;
+}
+
+body {
+    background: #e1ecf2;
+}
+
+.wrapper {
+    margin: 10px;
+    overflow: auto;
+}
+
+/* start top nav  */
+
+.wrapper .top_navbar {
+    width: calc(100% - 20px);
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 10px;
+}
+
+.wrapper .top_navbar .hamburger {
+    width: 70px;
+    height: 100%;
+    background: #2e4ead;
+    padding: 15px 17px;
+    border-top-left-radius: 20px;
+    cursor: pointer;
+}
+
+.wrapper .top_navbar .hamburger div {
+    width: 35px;
+    height: 4px;
+    background: #92a6e2;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.wrapper .top_navbar .top_menu {
+    width: calc(100% - 70px);
+    height: 100%;
+    background: #fff;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .top_navbar .top_menu .logo {
+    color: #2e4ead;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.wrapper .top_navbar .top_menu ul {
+    display: flex;
+    margin-top: 8px;
+}
+
+.wrapper .top_navbar .top_menu ul li a.my-nav-link {
+    display: block;
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #2e4ead;
+    border-radius: 50%;
+    color: #2e4ead;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover {
+    background: #4360b5;
+    color: #fff;
+}
+
+.wrapper .top_navbar .top_menu ul li a:hover i {
+    color: #fff;
+}
+
+.wrapper .top_navbar .top_menu .dropdown-menu {
+    background: #4360b5;
+    color: #fff;
+    top: 15px !important;
+    left: -21px !important;
+}
+
+.wrapper .top_navbar .top_menu .dropdown-menu a {
+    color: #afbdcf;
+}
+
+/* end top nav  */
+
+/* start sidebar  */
+
+.wrapper .sidebar {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    background: #2e4ead;
+    width: 200px;
+    height: calc(100% - 80px);
+    border-bottom-left-radius: 20px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    overflow: auto;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 1px;
+    color: #92a6e2;
+    white-space: nowrap;
+}
+
+.wrapper .sidebar ul li a:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #92a6e2;
+    display: none;
+}
+
+.wrapper .sidebar ul li a span.icon {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a span.title {
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active {
+    background: #4360b5;
+    color: #fff;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before {
+    display: block;
+}
+
+a.sub-text {
+    font-size: 13px;
+    margin-right: 15px;
+}
+
+.sidebar .menue-profile {
+    background-color: rgb(35, 65, 153);
+    padding: 15px;
+}
+
+.sidebar .menue-profile img {
+    width: 45%;
+    margin-bottom: 5px;
+}
+
+.sidebar .menue-profile span,
+.sidebar .menue-profile h5 {
+    color: #92a6e2;
+    white-space: nowrap;
+}
+
+.sidebar .menue-profile h5 {
+    font-weight: bold;
+
+}
+
+/* end sidebar  */
+
+/* start main container  */
+
+.wrapper .main-container {
+    width: (100% - 200px);
+    margin-top: 70px;
+    margin-left: 200px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.wrapper .main-container .item {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.wrapper.collapsed .sidebar {
+    width: 70px;
+}
+
+.wrapper.collapsed .sidebar ul li a {
+    text-align: center;
+}
+
+.wrapper.collapsed .sidebar ul li a span.icon {
+    margin: 0;
+}
+
+.wrapper.collapsed .sidebar ul li a span.title {
+    display: none;
+}
+
+.wrapper.collapsed .main-container {
+    width: (100% - 70px);
+    margin-left: 70px;
+}
+
+.wrapper.collapsed .sidebar .menue-profile h5,
+.wrapper.collapsed .sidebar .menue-profile img,
+.wrapper.collapsed .sidebar .menue-profile span,
+.wrapper.collapsed .sidebar .menue-profile {
+    display: none !important;
+}
+
+
+.wrapper .form_wrap .input_wrap>i {
+    position: absolute;
+    right: 16px;
+    top: 17px;
+}
+
+.wrapper .form_wrap .input_wrap>i.error {
+    color: #dc3545;
+}
+
+.wrapper .form_wrap .input_wrap>i.success {
+    color: #28a745;
+}
+
+/* end main container  */
+
+
+/* start floating input *
+
+/* Input form Style */
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    border: 2px solid #afbdcf;
+    border-radius: 5px;
+    height: 47px;
+    width: 100%;
+    color: #000000;
+    font-size: 14px;
+    padding-left: 20px;
+    box-shadow: none;
+}
+
+/* Label style after Input feild is in focus. Can also use input:focus ~ label to select sibling. */
+
+input:focus+label,
+input:valid+label {
+    font-size: 12px;
+    color: #555657;
+    top: -5px;
+    left: 10px;
+    background: #e1ecf2;
+    padding: 0px 5px 0px 5px;
+    font-weight: bold;
+}
+
+.input_wrap {
+    width: 100%;
+    position: relative;
+}
+
+.input_wrap label {
+    font-family: arial;
+    font-size: 16px;
+    color: #afbdcf;
+    padding: 14px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    pointer-events: none;
+}
+
+.input_wrap label:focus {
+    color: red;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+.form-check {
+    line-height: 2;
+}
+
+input.form-check-input {
+    width: 20px;
+    height: 20px;
+}
+
+/* end floating input */
+
+/* start messages error  */
+p.message {
+    background-color: #222;
+    font-size: .95em;
+    color: white;
+    padding: 10px 5px;
+    border-radius: 3px;
+    line-height: 1.5;
+}
+
+p.message.t1 {
+    background-color: #68ab68;
+}
+
+p.message.t2 {
+    background-color: #900;
+}
+
+p.message.t3 {
+    background-color: rgb(124, 80, 27);
+}
+
+p.message.t4 {
+    background-color: #5351ad;
+}
+
+/* end messages error  */
+
+
+/*start  Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #CCC;
+    background-image: none;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select */
+.select {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3em;
+    line-height: 3;
+    background: #CCC;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+select {
+    flex: 1;
+    padding: 0 .5em;
+    color: rgb(100, 98, 98);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #CCC;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+
+.select:hover::after {
+    color: #a8a8a8;
+}
+
+
+/* end Reset Select */
+
+
+/* new login form  */
+
+#formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    margin: auto;
+    margin-top: 25vh;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover,
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background-color: #39ace7;
+}
+
+input[type=button]:active,
+input[type=submit]:active,
+input[type=reset]:active {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+form#login input[type=text],
+form#login input[type=password] {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+form#login input[type=text]:focus,
+form#login input[type=password]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+}
+
+form#login input[type=text]:placeholder,
+form#login input[type=password]:placeholder {
+    color: #cccccc;
+}
+
+
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: #0d0d0d;
+}
+
+.underlineHover:hover:after {
+    width: 100%;
+}
+
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#login-icon {
+    width: 20%;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
